@@ -7,103 +7,172 @@
 body {
     font-family: 'Californian FB', serif, Georgia, 'Times New Roman', Times, serif;
     background-color: #FDE2E9;
-    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-x: auto;
+    height: 100vh;
 }
 
-/* Home Page Styles */
-.container {
-    position: relative;
-    width: 100vw;
+/* Horizontal Layout */
+.horizontal-container {
+    display: flex;
     height: 100vh;
+    width: max-content;
     background-color: #FDE2E9;
-    overflow: hidden;
 }
 
-.background-section {
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    width: 100%;
-    height: 100%;
 }
 
-.perfume-bottle {
-    position: absolute;
-    left: -10%;
-    top: 0;
-    width: 40vw;
-    height: 100vh;
-    object-fit: cover;
+/* Brand Section */
+.brand-section {
+    width: 100vw;
+    background-color: #FDE2E9;
+    padding: 0 5vw;
 }
 
-.model-image {
-    position: absolute;
-    right: -10%;
-    top: 0;
-    width: 50vw;
-    height: 100vh;
-    object-fit: cover;
-}
-
-.background-image {
-    position: absolute;
-    left: 30%;
-    top: 0;
-    width: 40vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-}
-
-.content-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 10;
+.brand-content {
+    text-align: left;
+    max-width: 600px;
 }
 
 .brand-name {
     font-family: 'Edwardian Script ITC', cursive, 'Brush Script MT', fantasy;
-    font-size: clamp(120px, 15vw, 300px);
+    font-size: clamp(80px, 12vw, 200px);
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 0.9;
     color: #1E1E1E;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .brand-subtitle {
+    font-family: 'Californian FB', serif, Georgia, 'Times New Roman', Times, serif;
+    font-size: clamp(16px, 2.5vw, 32px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.3em;
+    color: #1E1E1E;
+    margin-bottom: 40px;
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.arrow-icon {
+    width: clamp(40px, 8vw, 80px);
+    height: auto;
+    opacity: 0.8;
+}
+
+/* Perfume Sections */
+.perfume-section {
+    width: 80vw;
+    background-color: #FDE2E9;
+}
+
+.perfume-image {
+    width: auto;
+    height: 80vh;
+    max-width: 60vw;
+    object-fit: contain;
+}
+
+/* Model Section */
+.model-section {
+    width: 80vw;
+    background-color: #FDE2E9;
+}
+
+.model-image {
+    width: auto;
+    height: 90vh;
+    max-width: 70vw;
+    object-fit: contain;
+}
+
+/* About Section */
+.about-section {
+    width: 100vw;
+    background-color: #FDE2E9;
+    padding: 0 5vw;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+    max-width: 1200px;
+}
+
+.about-perfume {
+    width: auto;
+    height: 60vh;
+    max-width: 40vw;
+    object-fit: contain;
+}
+
+.about-text-container {
+    text-align: left;
+}
+
+.about-title {
     font-family: 'Californian FB', serif, Georgia, 'Times New Roman', Times, serif;
     font-size: clamp(24px, 4vw, 60px);
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: 0.2em;
     color: #1E1E1E;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
-.navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-button {
-    background: rgba(246, 245, 246, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 30px 60px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.nav-button a {
+.about-link {
     font-family: 'Californian FB', serif, Georgia, 'Times New Roman', Times, serif;
-    font-size: clamp(18px, 3vw, 36px);
+    font-size: clamp(16px, 2.5vw, 28px);
     font-weight: 400;
-    line-height: 1.2;
+    color: #1E1E1E;
+    text-decoration: underline;
     letter-spacing: 0.1em;
-    color: #000000;
-    text-decoration: none;
-    text-align: center;
+}
+
+.about-link:hover {
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .horizontal-container {
+        flex-direction: column;
+        height: auto;
+        width: 100vw;
+    }
+    
+    section {
+        width: 100vw !important;
+        height: 100vh;
+    }
+    
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 3vh;
+    }
+    
+    .about-perfume {
+        max-width: 60vw;
+        height: 40vh;
+    }
 }
 
 /* About Page Styles */
@@ -131,26 +200,27 @@ body {
     z-index: 1;
 }
 
-.arrow-icon {
-    width: 844px;
-    height: 374px;
+.about-background .arrow-icon {
+    width: 60vw;
+    max-width: 600px;
+    height: auto;
     opacity: 0.1;
 }
 
-.about-content {
+.about-content-page {
     position: relative;
     z-index: 10;
     text-align: center;
-    max-width: 1600px;
+    max-width: 1200px;
 }
 
 .about-nav {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 .home-link {
     font-family: 'Californian FB', serif, Georgia, 'Times New Roman', Times, serif;
-    font-size: clamp(18px, 3vw, 36px);
+    font-size: clamp(18px, 3vw, 32px);
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: 0.1em;
@@ -158,61 +228,36 @@ body {
     text-decoration: none;
     background: rgba(246, 245, 246, 0.8);
     backdrop-filter: blur(10px);
-    padding: 30px 60px;
+    padding: 20px 40px;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     display: inline-block;
 }
 
+.home-link:hover {
+    opacity: 0.8;
+}
+
 .about-text {
-    background: #F5F4F5;
-    padding: 80px;
+    background: rgba(245, 244, 245, 0.9);
+    padding: 60px;
     border-radius: 20px;
-    max-width: 1582px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .about-text p {
     font-family: 'Californian FB', serif, Georgia, 'Times New Roman', Times, serif;
-    font-size: clamp(20px, 3vw, 40px);
+    font-size: clamp(18px, 2.5vw, 32px);
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.5;
     color: #000000;
     text-align: center;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-    .nav-button {
-        padding: 15px 30px;
-    }
-    
     .about-text {
-        padding: 40px;
+        padding: 30px;
         margin: 0 20px;
-    }
-    
-    .about-text p {
-        font-size: clamp(18px, 4vw, 32px);
-    }
-    
-    .home-link {
-        font-size: clamp(16px, 4vw, 32px);
-        padding: 20px 40px;
-    }
-    
-    .perfume-bottle {
-        width: 50vw;
-        left: -20%;
-    }
-    
-    .model-image {
-        width: 60vw;
-        right: -20%;
-    }
-    
-    .background-image {
-        width: 50vw;
-        left: 25%;
     }
 }
