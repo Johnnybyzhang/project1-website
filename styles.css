@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Californian FB', serif, Georgia, 'Times New Roman', Times, serif;
+    background-color: #FDE2E9;
+    overflow-x: hidden;
+}
+
+/* Home Page Styles */
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FDE2E9;
+}
+
+.background-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.perfume-bottle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 1459px;
+    object-fit: cover;
+}
+
+.model-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1299px;
+    height: 1459px;
+    object-fit: cover;
+}
+
+.background-image {
+    position: absolute;
+    right: 1299px;
+    top: 0;
+    width: 1024px;
+    height: 1459px;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.brand-name {
+    font-family: 'Edwardian Script ITC', cursive, 'Brush Script MT', fantasy;
+    font-size: 600px;
+    font-weight: 400;
+    line-height: 1.1787109375;
+    color: #1E1E1E;
+    margin-bottom: 20px;
+}
+
+.brand-subtitle {
+    font-family: 'Californian FB', serif, Georgia, 'Times New Roman', Times, serif;
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 1.1357421875;
+    letter-spacing: 70%;
+    color: #1E1E1E;
+    margin-bottom: 100px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-button {
+    background: #F6F5F6;
+    filter: blur(100px);
+    padding: 50px 100px;
+    border-radius: 10px;
+}
+
+.nav-button a {
+    font-family: 'Californian FB', serif, Georgia, 'Times New Roman', Times, serif;
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 1.1357421875;
+    letter-spacing: 20%;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* About Page Styles */
+.about-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FDE2E9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.about-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.arrow-icon {
+    width: 844px;
+    height: 374px;
+    opacity: 0.1;
+}
+
+.about-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 1600px;
+}
+
+.about-nav {
+    margin-bottom: 100px;
+}
+
+.home-link {
+    font-family: 'Californian FB', serif, Georgia, 'Times New Roman', Times, serif;
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 1.1357421875;
+    letter-spacing: 20%;
+    color: #000000;
+    text-decoration: none;
+    background: #F6F5F6;
+    filter: blur(100px);
+    padding: 30px 60px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.about-text {
+    background: #F5F4F5;
+    padding: 80px;
+    border-radius: 20px;
+    max-width: 1582px;
+    margin: 0 auto;
+}
+
+.about-text p {
+    font-family: 'Californian FB', serif, Georgia, 'Times New Roman', Times, serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.1357421875;
+    color: #000000;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+    .brand-name {
+        font-size: 400px;
+    }
+    
+    .brand-subtitle {
+        font-size: 80px;
+    }
+    
+    .nav-button a, .home-link {
+        font-size: 72px;
+    }
+    
+    .about-text p {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: 200px;
+    }
+    
+    .brand-subtitle {
+        font-size: 40px;
+    }
+    
+    .nav-button a, .home-link {
+        font-size: 36px;
+        padding: 20px 40px;
+    }
+    
+    .about-text {
+        padding: 40px;
+    }
+    
+    .about-text p {
+        font-size: 24px;
+    }
+    
+    .perfume-bottle, .model-image, .background-image {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+}
