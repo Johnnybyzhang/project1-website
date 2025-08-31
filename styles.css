@@ -101,18 +101,39 @@ section {
     transform: translateX(0);
 }
 
-/* Perfume Sections */
-.perfume-section {
-    width: 60vw;
+/* Rest Section */
+.rest-section {
+    width: 100vw;
     background-color: #FDE2E9;
+    padding: 0 2vw;
 }
 
-.perfume-image {
-    width: auto;
+.rest-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    gap: 2vw;
+}
+
+.rest-image {
     height: 70vh;
-    max-width: 50vw;
     object-fit: contain;
     animation: float 6s ease-in-out infinite;
+}
+
+.rest-image:nth-child(2) {
+    animation: float 7s ease-in-out infinite reverse;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+
+.about-container .rest-image {
+    animation: float 8s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -128,42 +149,6 @@ section {
     75% { 
         transform: translateY(-8px);
     }
-}
-
-/* Model Section */
-.model-section {
-    width: 60vw;
-    background-color: #FDE2E9;
-}
-
-.model-image {
-    width: auto;
-    height: 70vh;
-    max-width: 55vw;
-    object-fit: contain;
-    animation: float 7s ease-in-out infinite reverse;
-}
-
-/* About Section */
-.about-section {
-    width: 100vw;
-    background-color: #FDE2E9;
-    padding: 0 5vw;
-}
-
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 5vw;
-    max-width: 1200px;
-}
-
-.about-perfume {
-    width: auto;
-    height: 70vh;
-    max-width: 30vw;
-    object-fit: contain;
-    animation: float 8s ease-in-out infinite;
 }
 
 .about-text-container {
