@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add smooth scroll animations
     document.documentElement.style.scrollBehavior = 'smooth';
     
-    // Add fade-in animation for page load
-    addPageLoadAnimation();
+    // Start the logo animation sequence
+    startLogoAnimation();
     
     // Add interactive hover effects
     addHoverEffects();
@@ -50,19 +50,52 @@ function enableHorizontalScroll() {
     }
 }
 
-function addPageLoadAnimation() {
-    const elements = document.querySelectorAll('.brand-content, .about-content, .about-content-page');
+function startLogoAnimation() {
+    const animatedTexts = document.querySelectorAll('.animated-text');
+    const logoWrapper = document.querySelector('.logo-image-wrapper');
+    const arrowIcon = document.querySelector('.arrow-icon');
     
-    elements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateX(-30px)';
-        element.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
-        
+    // Step 1: Animate text loading
+    animatedTexts.forEach((text, index) => {
         setTimeout(() => {
-            element.style.opacity = '1';
-            element.style.transform = 'translateX(0)';
-        }, 300);
+            text.classList.add('loaded');
+        }, index * 400);
     });
+    
+    // Step 2: After text loads, start distortion
+    setTimeout(() => {
+        animatedTexts.forEach(text => {
+            text.classList.add('distorted');
+        });
+    }, 1200);
+    
+    // Step 3: Fade in arrow logo (covers text)
+    setTimeout(() => {
+        logoWrapper.classList.add('logo-fade-in');
+        logoWrapper.style.opacity = '1';
+    }, 1800);
+    
+    // Step 4: Show navigation arrow
+    setTimeout(() => {
+        if (arrowIcon) {
+            arrowIcon.classList.add('show');
+        }
+    }, 2400);
+    
+    // Step 5: Load other page elements
+    setTimeout(() => {
+        const otherElements = document.querySelectorAll('.about-content, .about-content-page');
+        otherElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateX(-30px)';
+            element.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
+            
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateX(0)';
+            }, 100);
+        });
+    }, 2600);
 }
 
 function addHoverEffects() {

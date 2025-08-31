@@ -34,7 +34,7 @@ section {
 
 /* Brand Section */
 .brand-section {
-    width: 100vw;
+    width: 80vw;
     background-color: #FDE2E9;
     padding: 0 5vw;
 }
@@ -44,6 +44,11 @@ section {
     max-width: 600px;
 }
 
+.logo-container {
+    position: relative;
+    overflow: hidden;
+}
+
 .brand-name {
     font-family: 'Edwardian Script ITC', cursive, 'Brush Script MT', fantasy;
     font-size: clamp(80px, 12vw, 200px);
@@ -51,6 +56,8 @@ section {
     line-height: 0.9;
     color: #1E1E1E;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
 }
 
 .brand-subtitle {
@@ -61,49 +68,127 @@ section {
     letter-spacing: 0.3em;
     color: #1E1E1E;
     margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.animated-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.animated-text.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.logo-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('images/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+/* Distortion Effects */
+.distorted {
+    filter: blur(2px) hue-rotate(180deg);
+    transform: scale(1.02) skew(2deg);
+    transition: all 0.6s ease-out;
+}
+
+.logo-fade-in {
+    animation: logoFadeIn 2s ease-out forwards;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes logoFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(-5deg);
+        filter: blur(10px);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1) rotate(2deg);
+        filter: blur(3px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        filter: blur(0px);
+    }
 }
 
 .arrow-container {
     display: flex;
     justify-content: flex-start;
     margin-top: 20px;
+    position: relative;
+    z-index: 4;
 }
 
 .arrow-icon {
     width: clamp(40px, 8vw, 80px);
     height: auto;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 1s ease-out;
+}
+
+.arrow-icon.show {
     opacity: 0.8;
+    transform: translateX(0);
 }
 
 /* Perfume Sections */
 .perfume-section {
-    width: 80vw;
+    width: 60vw;
     background-color: #FDE2E9;
 }
 
 .perfume-image {
     width: auto;
     height: 80vh;
-    max-width: 60vw;
+    max-width: 50vw;
     object-fit: contain;
 }
 
 /* Model Section */
 .model-section {
-    width: 80vw;
+    width: 60vw;
     background-color: #FDE2E9;
 }
 
 .model-image {
     width: auto;
     height: 90vh;
-    max-width: 70vw;
+    max-width: 55vw;
     object-fit: contain;
 }
 
 /* About Section */
 .about-section {
-    width: 100vw;
+    width: 80vw;
     background-color: #FDE2E9;
     padding: 0 5vw;
 }
