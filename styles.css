@@ -103,14 +103,14 @@ section {
 
 /* Perfume Sections */
 .perfume-section {
-    width: 60vw;
+    width: 33.33vw;
     background-color: #FDE2E9;
 }
 
 .perfume-image {
     width: auto;
-    height: 80vh;
-    max-width: 50vw;
+    height: 70vh;
+    max-width: 30vw;
     object-fit: contain;
     animation: float 6s ease-in-out infinite;
 }
@@ -132,14 +132,14 @@ section {
 
 /* Model Section */
 .model-section {
-    width: 60vw;
+    width: 33.33vw;
     background-color: #FDE2E9;
 }
 
 .model-image {
     width: auto;
-    height: 90vh;
-    max-width: 55vw;
+    height: 70vh;
+    max-width: 30vw;
     object-fit: contain;
     animation: float 7s ease-in-out infinite reverse;
 }
@@ -154,14 +154,14 @@ section {
 .about-content {
     display: flex;
     align-items: center;
-    gap: 5vw;
+    gap: 0;
     max-width: 1200px;
 }
 
 .about-perfume {
     width: auto;
-    height: 60vh;
-    max-width: 40vw;
+    height: 70vh;
+    max-width: 30vw;
     object-fit: contain;
     animation: float 8s ease-in-out infinite;
 }
