@@ -52,7 +52,7 @@ function enableHorizontalScroll() {
 
 function startLogoAnimation() {
     const animatedTexts = document.querySelectorAll('.animated-text');
-    const logoWrapper = document.querySelector('.logo-image-wrapper');
+    const logoImage = document.querySelector('.logo-image');
     const arrowIcon = document.querySelector('.arrow-icon');
     
     // Step 1: Animate text loading
@@ -62,27 +62,28 @@ function startLogoAnimation() {
         }, index * 400);
     });
     
-    // Step 2: After text loads, start distortion
+    // Step 2: After text loads, fade out text and fade in logo
     setTimeout(() => {
+        // Fade out text
         animatedTexts.forEach(text => {
-            text.classList.add('distorted');
+            text.classList.add('text-fade-out');
         });
+        
+        // Fade in logo
+        if (logoImage) {
+            logoImage.classList.add('logo-fade-in');
+            logoImage.style.opacity = '1';
+        }
     }, 1200);
     
-    // Step 3: Fade in arrow logo (covers text)
-    setTimeout(() => {
-        logoWrapper.classList.add('logo-fade-in');
-        logoWrapper.style.opacity = '1';
-    }, 1800);
-    
-    // Step 4: Show navigation arrow
+    // Step 3: Show navigation arrow
     setTimeout(() => {
         if (arrowIcon) {
             arrowIcon.classList.add('show');
         }
-    }, 2400);
+    }, 2000);
     
-    // Step 5: Load other page elements
+    // Step 4: Load other page elements
     setTimeout(() => {
         const otherElements = document.querySelectorAll('.about-content, .about-content-page');
         otherElements.forEach(element => {
@@ -95,7 +96,7 @@ function startLogoAnimation() {
                 element.style.transform = 'translateX(0)';
             }, 100);
         });
-    }, 2600);
+    }, 2400);
 }
 
 function addHoverEffects() {
