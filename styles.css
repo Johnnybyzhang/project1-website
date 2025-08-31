@@ -149,14 +149,21 @@ section {
     }
 }
 
+.text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    min-width: 300px;
+    flex-shrink: 0;
+}
+
 .about-text-container {
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    min-width: 200px;
-    flex-shrink: 0;
 }
 
 .about-title {
