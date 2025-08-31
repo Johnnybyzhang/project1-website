@@ -54,8 +54,8 @@ section {
 
 
 .logo-image {
-    width: clamp(400px, 80vw, 1200px);
-    height: clamp(200px, 40vw, 600px);
+    width: clamp(300px, 60vw, 800px);
+    height: clamp(150px, 30vw, 400px);
     background-image: url('images/logo.svg');
     background-repeat: no-repeat;
     background-position: center;
