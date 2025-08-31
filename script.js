@@ -51,39 +51,24 @@ function enableHorizontalScroll() {
 }
 
 function startLogoAnimation() {
-    const animatedTexts = document.querySelectorAll('.animated-text');
     const logoImage = document.querySelector('.logo-image');
     const arrowIcon = document.querySelector('.arrow-icon');
     
-    // Step 1: Animate text loading
-    animatedTexts.forEach((text, index) => {
-        setTimeout(() => {
-            text.classList.add('loaded');
-        }, index * 400);
-    });
-    
-    // Step 2: After text loads, fade out text and fade in logo
+    // Step 1: Clear logo blur after a short delay
     setTimeout(() => {
-        // Fade out text
-        animatedTexts.forEach(text => {
-            text.classList.add('text-fade-out');
-        });
-        
-        // Fade in logo
         if (logoImage) {
-            logoImage.classList.add('logo-fade-in');
-            logoImage.style.opacity = '1';
+            logoImage.classList.add('logo-clear');
         }
-    }, 1200);
+    }, 800);
     
-    // Step 3: Show navigation arrow
+    // Step 2: Show navigation arrow
     setTimeout(() => {
         if (arrowIcon) {
             arrowIcon.classList.add('show');
         }
     }, 2000);
     
-    // Step 4: Load other page elements
+    // Step 3: Load other page elements
     setTimeout(() => {
         const otherElements = document.querySelectorAll('.about-content, .about-content-page');
         otherElements.forEach(element => {
@@ -96,7 +81,7 @@ function startLogoAnimation() {
                 element.style.transform = 'translateX(0)';
             }, 100);
         });
-    }, 2400);
+    }, 2200);
 }
 
 function addHoverEffects() {
