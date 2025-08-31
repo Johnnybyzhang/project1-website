@@ -248,7 +248,7 @@ section {
 .bg-rect-2 {
     width: 105vw;
     height: 15vh;
-    top: 25vh;
+    top: 0;
     left: -2.5vw;
     background-color: #F6F5F6;
 }
@@ -264,7 +264,7 @@ section {
 .bg-rect-4 {
     width: 105vw;
     height: 15vh;
-    top: 45vh;
+    bottom: 0;
     left: -2.5vw;
     background-color: #F6F5F6;
 }
@@ -281,40 +281,42 @@ section {
     filter: blur(100px);
 }
 
-/* Background logo */
-.about-background-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-.background-vector {
-    width: 30vw;
-    height: auto;
-    opacity: 0.1;
-    filter: brightness(0);
-}
-
-/* Main content */
+/* Main content - vertical stack */
 .about-main-content {
     position: relative;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     max-width: 1582px;
     width: 90vw;
+    gap: 8vh;
+}
+
+/* Logo section */
+.about-logo {
+    flex-shrink: 0;
+}
+
+.main-logo {
+    height: 12vh;
+    width: auto;
+    filter: brightness(0);
 }
 
 .about-main-text {
-    margin-bottom: 60px;
+    flex: 0 0 auto;
+    max-width: 800px;
+    width: 60vw;
 }
 
 .about-main-text p {
     font-family: 'Californian FB', serif, Georgia, 'Times New Roman', Times, serif;
-    font-size: clamp(32px, 4vw, 64px);
+    font-size: clamp(18px, 2vw, 32px);
     font-weight: 400;
-    line-height: 1.136;
+    line-height: 1.4;
     color: #000000;
     text-align: center;
     margin: 0;
@@ -331,6 +333,7 @@ section {
     text-align: center;
     display: inline-block;
     transition: opacity 0.3s ease;
+    flex-shrink: 0;
 }
 
 .home-button:hover {
@@ -340,9 +343,10 @@ section {
 @media (max-width: 768px) {
     .about-main-content {
         width: 95vw;
+        gap: 30px;
     }
     
-    .about-main-text {
-        margin-bottom: 40px;
+    .main-logo {
+        width: clamp(150px, 30vw, 250px);
     }
 }
