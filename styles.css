@@ -33,9 +33,9 @@ section {
 
 /* Brand Section */
 .brand-section {
-    width: 80vw;
+    width: 50vw;
     background-color: #FDE2E9;
-    padding: 0 5vw;
+    padding: 0 2vw;
 }
 
 .brand-content {
@@ -51,7 +51,7 @@ section {
 
 .logo-image {
     width: 100%;
-    height: 400px;
+    height: 1200px;
     background-image: url('images/logo.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -95,7 +95,7 @@ section {
 
 /* Perfume Sections */
 .perfume-section {
-    width: 60vw;
+    width: 40vw;
     background-color: #FDE2E9;
 }
 
@@ -124,7 +124,7 @@ section {
 
 /* Model Section */
 .model-section {
-    width: 60vw;
+    width: 40vw;
     background-color: #FDE2E9;
 }
 
@@ -138,9 +138,9 @@ section {
 
 /* About Section */
 .about-section {
-    width: 80vw;
+    width: 50vw;
     background-color: #FDE2E9;
-    padding: 0 5vw;
+    padding: 0 2vw;
 }
 
 .about-content {
